@@ -21,8 +21,8 @@ func main() {
 
 	r.Route("/commands", func(r chi.Router) {
 		r.Route("/{commandName}", func(r chi.Router) {
-			r.Get("/", CommandHandler)
-			r.Post("/", CommandHandler)
+			r.Get("/executions", CommandHandler)
+			r.Post("/executions", CommandHandler)
 		})
 	})
 	http.ListenAndServe(":3333", r)
